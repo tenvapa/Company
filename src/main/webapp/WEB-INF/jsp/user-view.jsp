@@ -21,8 +21,10 @@
                         <th>Name</th>
                         <th>Mail</th>
                         <th>Age</th>
-                        <th></th>
-                        <th></th>
+                        <th>Job</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Contract Length</th>
 
                     </tr>
                 </thead>
@@ -32,6 +34,10 @@
                             <td><c:out value="${employee.name}"/></td>
                             <td><c:out value="${employee.mail}"/></td>
                             <td><c:out value="${employee.age}"/></td>
+                            <td><c:out value="${employee.job.jobPosition}"/></td>
+                            <td><c:out value="${employee.job.departmentName.department}"/></td>
+                            <td><c:out value="${employee.job.salary} BGN"/></td>
+                            <td><c:out value="${employee.job.contractLength} months"/></td>
                             <td><a href = "/showAll/delete/${employee.name}">DELETE</a>
                             <td><a href = "/edit/${employee.name}">EDIT</a>
 

@@ -26,6 +26,25 @@
             <label for="age">Age:</label>
             <input type="number" class="form-control" id="age" name="age" value=${user.age}>
         </div>
+
+            <div class="form-group">
+                <label for="jobpos">Job Position:</label>
+                <input type="text" class="form-control" id="jobpos" name="jobPosition" value=${user.job.jobPosition}>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" class="form-control" id="department" name="department" value=${user.job.departmentName.department}>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" id="salary" name="salary" value=${user.job.salary}>
+            </div>
+
+            <div class="form-group">
+                <label for="con">Contract Length:</label>
+                <input type="number" class="form-control" id="con" name="contractLength" value=${user.job.contractLength}>
+            </div>
+
         <button type="submit" class="btn btn-primary">SAVE</button>
     </form>
 

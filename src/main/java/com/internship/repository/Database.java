@@ -1,14 +1,13 @@
-package com.internship.repository.classes;
+package com.internship.repository;
 
 
 import com.internship.models.user.interfaces.User;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 @Component
-public class Database implements com.internship.repository.interfaces.Repository {
+public class Database implements com.internship.repository.Repository {
 
     private List<User> users;
 

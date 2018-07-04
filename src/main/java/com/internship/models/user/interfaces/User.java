@@ -1,5 +1,8 @@
 package com.internship.models.user.interfaces;
 
+import com.internship.models.department.Department;
+import com.internship.models.job.Job;
+
 public interface User {
 
     String getName();
@@ -10,6 +13,10 @@ public interface User {
 
     String getMail();
     void setMail(String mail);
+
+
+    Job getJob();
+    void setJob(Job job);
 
 
 

@@ -1,5 +1,6 @@
-package com.internship.models.user.interfaces;
+package com.internship.services;
 
+import com.internship.models.user.interfaces.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

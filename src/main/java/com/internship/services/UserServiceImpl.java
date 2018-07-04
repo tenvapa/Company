@@ -1,10 +1,8 @@
-package com.internship.models.user.classes;
+package com.internship.services;
 
 import com.internship.models.user.interfaces.User;
-import com.internship.models.user.interfaces.UserService;
-import com.internship.repository.interfaces.Repository;
+import com.internship.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import org.springframework.stereotype.Service;
 

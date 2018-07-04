@@ -1,8 +1,10 @@
 package com.internship.controller;
 
+import com.internship.models.department.DepartmentImpl;
+import com.internship.models.job.JobImpl;
 import com.internship.models.user.classes.Employee;
 import com.internship.models.user.interfaces.User;
-import com.internship.models.user.interfaces.UserService;
+import com.internship.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,10 +57,12 @@ public class UserController {
     }
 
     @PostMapping("edit/{name}")
-    public String editUser(@PathVariable String name, Employee newUser,  Model model){
+    public String editUser(@PathVariable String name, Employee newUser, JobImpl job, DepartmentImpl department){
+
+        job.setDepartmentName(department);
+        newUser.setJob(job);
         User user = this.service.getUserByName(name);
         this.service.editUser(user, newUser);
-
         return "redirect:/showAll";
 
     }

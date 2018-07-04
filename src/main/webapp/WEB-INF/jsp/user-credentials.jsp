@@ -26,6 +26,24 @@
                 <label for="age">Age:</label>
                 <input type="number" class="form-control" id="age" name="age">
             </div>
+            <div class="form-group">
+                <label for="jobpos">Job Position:</label>
+                <input type="text" class="form-control" id="jobpos" name="jobPosition">
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" class="form-control" id="department" name="department">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" id="salary" name="salary">
+            </div>
+
+            <div class="form-group">
+                <label for="con">Contract Length:</label>
+                <input type="number" class="form-control" id="con" name="contractLength">
+            </div>
+
             <button type="submit" class="btn btn-primary">Go</button>
         </form>
 

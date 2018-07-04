@@ -1,4 +1,4 @@
-package com.internship.repository.interfaces;
+package com.internship.repository;
 
 
 import com.internship.models.user.interfaces.User;
