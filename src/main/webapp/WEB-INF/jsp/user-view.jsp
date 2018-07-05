@@ -28,7 +28,6 @@
 <body>
     <div class="container">
 
-
         <div class = "table-responsive table-primary">
             <table class="table">
                 <thead>
