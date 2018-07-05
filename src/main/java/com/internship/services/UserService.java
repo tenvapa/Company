@@ -1,5 +1,6 @@
-package com.internship.models.user.interfaces;
+package com.internship.services;
 
+import com.internship.models.user.interfaces.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface UserService {
     User getUserByName(String name);
     void deleteUser(User user);
     void editUser(User old, User newUs);
+    List<User> filterBy(String type);
 }
