@@ -49,13 +49,4 @@ public class JobImpl implements Job {
         return this.departmentName;
     }
 
-    @Override
-    public void setName(String jobPosition) {
-        this.jobPosition=jobPosition;
-    }
-
-    @Override
-    public String getName() {
-        return this.jobPosition;
-    }
 }

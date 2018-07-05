@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 
             case "job" :
                 users = this.repository.getAllUsers().stream()
-                        .sorted(Comparator.comparing(x -> x.getJob().getName())).collect(Collectors.toList()); break;
+                        .sorted(Comparator.comparing(x -> x.getJob().getJobPosition())).collect(Collectors.toList()); break;
 
             case "department":
                 users = this.repository.getAllUsers().stream()

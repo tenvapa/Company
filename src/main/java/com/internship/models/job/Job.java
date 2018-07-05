@@ -7,8 +7,8 @@ public interface Job {
     void setDepartmentName(Department departmentName);
     Department getDepartmentName();
 
-    void setName(String jobPosition);
-    String getName();
+    void setJobPosition(String jobPosition);
+    String getJobPosition();
 
     void setSalary(String salary);
     String getSalary();
