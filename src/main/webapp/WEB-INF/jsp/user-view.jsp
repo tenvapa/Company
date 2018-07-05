@@ -11,9 +11,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+      <script type="text/javascript">
+          function filter()
+          {
+              var url = document.getElementById('dropdown').value;
+              if(url != 'none') {
+                  window.location = "/showAll/"+url;
+              }
+          }
+      </script>
+
+
+
 </head>
 <body>
     <div class="container">
+
+
         <div class = "table-responsive table-primary">
             <table class="table">
                 <thead>
@@ -25,6 +40,16 @@
                         <th>Department</th>
                         <th>Salary</th>
                         <th>Contract Length</th>
+                        <th>
+                            <select name="dropdown" id='dropdown'>
+                              <option value='none' selected>Choose a filter</option>
+                              <option value="name">Name</option>
+                              <option value="job">Job</option>
+                              <option value="department">Department</option>
+                            </select>
+
+                            <input type=button value="Filter" onclick="filter()" />
+                            </th>
 
                     </tr>
                 </thead>

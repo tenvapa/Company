@@ -12,4 +12,5 @@ public interface UserService {
     User getUserByName(String name);
     void deleteUser(User user);
     void editUser(User old, User newUs);
+    List<User> filterBy(String type);
 }

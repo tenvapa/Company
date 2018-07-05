@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -39,5 +42,27 @@ public class UserServiceImpl implements UserService {
     @Override
     public void editUser(User old, User newUs) {
         this.repository.editUser(old, newUs);
+    }
+
+    @Override
+    public List<User> filterBy(String type) {
+        List<User> users = new ArrayList<>();
+        switch (type){
+
+            case "name":
+                users = this.repository.getAllUsers().stream()
+                        .sorted(Comparator.comparing(User::getName)).collect(Collectors.toList());break;
+
+            case "job" :
+                users = this.repository.getAllUsers().stream()
+                        .sorted(Comparator.comparing(x -> x.getJob().getName())).collect(Collectors.toList()); break;
+
+            case "department":
+                users = this.repository.getAllUsers().stream()
+                        .sorted(Comparator.comparing(x -> x.getJob().getDepartmentName().getDepartment())).collect(Collectors.toList());
+
+        }
+
+        return users;
     }
 }

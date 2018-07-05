@@ -8,31 +8,49 @@ import com.internship.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class UserController {
     @Autowired
     private UserService service;
 
-    @GetMapping("showAll")
-    public String showUsers(Model model){
 
-        List<User> users = service.getAllUsers();
+    @GetMapping(value = "showAll/{filter}")
+    public String filterData(@PathVariable String filter, Model model){
+        List<User> users = new ArrayList<>();
+        if(!filter.isEmpty()){
+            users = this.service.filterBy(filter);
+        }
+        else{
+            users = service.getAllUsers();
 
-
-        if (!users.isEmpty()){
-                model.addAttribute("users", users);
-                return "user-view";
-            }
-        else {
-            return "redirect:/home";
         }
 
+        model.addAttribute("users", users);
+        return "user-view";
+
+
+    }
+
+
+    @GetMapping (value = "/showAll" )
+    public String showUsers(Model model){
+
+        List<User> users = this.service.getAllUsers();
+
+        if (!users.isEmpty()){
+            model.addAttribute("users", users);
+            return "user-view";
+        }
+        else {
+            return "redirect:/home";
+
+        }
     }
 
     @GetMapping("showAll/delete/{name}")
@@ -66,5 +84,6 @@ public class UserController {
         return "redirect:/showAll";
 
     }
+
 }
 
